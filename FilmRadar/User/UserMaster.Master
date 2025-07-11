@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.master.cs" Inherits="FilmRadar.User.UserMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Film-Radar Forum</title>
+    <link href="../User/Assest/UserCss.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="header">
+                <a>
+                    <img src="../Pictures/filmradarlogo.jfif" width="150" />
+                </a>
+                <a>Film-Radar Forum</a>
+                <asp:Panel ID="pnl_directadmin" runat="server" Visible="false" CssClass="DirectAdmin">
+                    <asp:LinkButton ID="lbtn_directadmin" runat="server" OnClick="lbtn_directadmin_Click">Admin Panel</asp:LinkButton>
+                </asp:Panel>
+                <asp:Panel ID="pnl_hasLogin" runat="server" Css="haslogin">
+                    <asp:Label ID="lbl_user" runat="server"></asp:Label>
+                    <asp:LinkButton ID="lbtn_exit" runat="server" OnClick="lbtn_exit_Click">Çıkış Yap</asp:LinkButton>
+                </asp:Panel>
+                <asp:Panel ID="pnl_hasnotLogin" runat="server" Visible="false" CssClass="hasnot">
+                    <a href="Login.aspx">Giriş Yap</a>
+                    <a href="Register.aspx">Kayıt Ol</a>
+                </asp:Panel>
+            </div>
+            <div class="container">
+                <div class="sideBar">
+                    <div class="CategoryTitle">
+                        <h2>Kategoriler</h2>
+                    </div>
+                    <asp:LinkButton ID="allCat" runat="server" OnClick="allCat_Click">
+                        <h3>Tüm Kategoriler</h3>
+                    </asp:LinkButton>
+                    <asp:Repeater ID="rp_categories" runat="server" OnItemCommand="rp_categories_ItemCommand">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lbtn_catfilm" runat="server" CommandName="SelectCategory" CommandArgument='<%# Eval("ID") %>' CssClass="CategoryCss">
+                                <h3><%# Eval("Name") %></h3>
+                            </asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

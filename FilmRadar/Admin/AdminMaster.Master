@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="FilmRadar.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Film-Radar Öneri Sitesi</title>
+    <link href="/Admin\Assest\AdminPanel.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="header">
+                <a>
+                    <img src="../Pictures/filmradarlogo.jfif" width="150">
+                </a>
+                <asp:LinkButton ID="lbtn_adminexit" runat="server" OnClick="lbtn_adminexit_Click" CssClass="AdminExit">ÇIKIŞ YAP</asp:LinkButton>
+            </div>
+            <div class="container">
+                <div class="sideBar">
+                    <div class="menuItem">
+                        Kategori İşlemleri
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="CategoriesList.aspx">
+                            <div class="dropdown-item">
+                                Kategori Listele
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="CategoriesAdd.aspx">
+                            <div class="dropdown-item">
+                                Kategori Ekle
+                            </div>
+                        </a>
+                    </div>
+                    <div class="menuItem">
+                        Kullanıcı İşlemleri
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="UserTypeList.aspx">
+                            <div class="dropdown-item">
+                                Kullanıcı Tür Listele
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="UserTypeAdd.aspx">
+                            <div class="dropdown-item">
+                                Kullanıcı Tür Ekle
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="UsersList.aspx">
+                            <div class="dropdown-item">
+                                Kullanıcıları Listele
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="UsersAdd.aspx">
+                            <div class="dropdown-item">
+                                Kullanıcı Ekle
+                            </div>
+                        </a>
+                    </div>
+                    <div class="menuItem">
+                        Film İşlemleri
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="FilmList.aspx">
+                            <div class="dropdown-item">
+                                Film Listele
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="FilmAdd.aspx">
+                            <div class="dropdown-item">
+                                Film Ekle
+                            </div>
+                        </a>
+                    </div>
+                    <div class="menuItem">
+                        Yorum İşlemleri
+                    </div>
+                    <div class="dropdown-container">
+                        <a href="CommentList.aspx">
+                            <div class="dropdown-item">
+                                Yorum İşlemleri
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
