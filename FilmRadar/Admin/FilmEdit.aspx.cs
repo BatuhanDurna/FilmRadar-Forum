@@ -41,7 +41,7 @@ namespace FilmRadar.Admin
 
         protected void lbtn_add_Click(object sender, EventArgs e)
         {
-			Films film = new Films();
+			Films film = dm.GetFilm(Convert.ToInt32(Request.QueryString["fID"]))
 			film.ID = Convert.ToInt32(Request.QueryString["fID"]);
 			film.FilmName = tb_filmName.Text;
 			film.IMDB = Convert.ToDecimal(tb_imdbRating.Text);
